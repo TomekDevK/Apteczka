@@ -51,9 +51,14 @@
         //Sprawdzanie ilosci rekordów w apteczce - generowanie id jako kolejny rekord
         $sql="SELECT COUNT(id) FROM {$_POST['yourAidKit']}";
         $count = $conn->query($sql);
-        $count = $count->fetch_assoc();
-        $count = $count["COUNT(id)"];
-        $count++;
+        if($count->num_rows >0){
+            $count = $count->fetch_assoc();
+            $count = $count["COUNT(id)"];
+            $count++;
+        }else {
+            $count = 1;
+        }
+       
         // sprawdzanie czy rekord o podanym id istnieje
         $count=sprawdzanie($conn,$count);
         $date=date("Y-m-d");

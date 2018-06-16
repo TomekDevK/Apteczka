@@ -46,7 +46,7 @@ class CreateAidKit extends Component {
     render () {
         let {access,kitResponse} = this.state
 
-        const adminValidation = access === '226a318e0106d6a6cd1ea8fe016287ce' ? null : $(window.location).attr('href','http://localhost:3000/#/')
+        const adminValidation = access === '226a318e0106d6a6cd1ea8fe016287ce' ? null : $(window.location).attr('href','')
 
         const createAidKit = <div className='inputmedicine-form'>
             <label>Podaj nazwę swojej apteczki:</label>
