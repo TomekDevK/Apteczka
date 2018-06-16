@@ -6,7 +6,7 @@ import $ from 'jquery'
 // shared
 import getCookie from '../shared/functions'
 
-class OutofDate extends Component {
+class Delete extends Component {
     constructor(){
         super()
         this.state = {
@@ -14,7 +14,7 @@ class OutofDate extends Component {
             yourAidKit: 'medicines'
         }
     }
-    // sprawdzanie dostępu
+
     componentDidMount () {
         let access = this.state.access
         access=getCookie('access')
@@ -25,11 +25,11 @@ class OutofDate extends Component {
         this.outOfDateRequestHandle()
     }
 
-    //Zbieranie informacji o przeterminowanych lekach i wyświetlanie ich w tablicy
+
     outOfDateRequestHandle = () => {
         let userName = getCookie('userName');
         axios({
-            url: 'https://tomekdev.000webhostapp.com/api/outOfDate.php',
+            url: 'https://tomekdev.000webhostapp.com/api/delete.php',
             method: 'post',
             data: querystring.stringify({
                 yourAidKit: this.state.yourAidKit,
@@ -37,13 +37,7 @@ class OutofDate extends Component {
             })
         })
         .then( response => {
-            let res=response.data.split(';')
-            let content = '<tr><td>Nazwa leku : Ilość : Data Ważności : Data dodania leku : Id leku : Użytkownik</td></tr>'
-            console.log(res.length)
-            for(let i=0;i<res.length;i++) {
-                content+= '<tr><td>'+res[i]+'</td></tr>'
-            }
-            $('#medicines-output').append(content)
+            console.log(response)
         }, err => {
             console.log(err)
         })
@@ -51,18 +45,24 @@ class OutofDate extends Component {
 
     render(){
         
-        const outofDateOutput= <div className='out-of-date-output'>
-            <table id='medicines-output'></table>
-        </div>
-
+        const deleteMed = <div className='deletemedicne-form'>
+        <label>Podaj nazwę swojej apteczki:</label>
+        <input ref='yourAidKit' type='text' ></input>
+        <label>Podaj nazwę leku:</label>
+        <input ref='medicineName' type='text' ></input>
+        <label>Podaj ilość leku:</label>
+        <input ref='medicineAmount' type='text' ></input>
+        <button onClick={this.deleteRequestHandle} value='U'>Utylizuj</button>
+        <button onClick={this.deleteRequestHandle} value='G'>Pobierz</button>
+    </div>
 
         return(
-            <div className='inputmedicine'>
-                {outofDateOutput}
+            <div className='delete'>
+                {deleteMed}
             </div>
         )
     }
 
 }
 
-export default OutofDate
+export default Delete

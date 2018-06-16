@@ -79,10 +79,11 @@ class Header extends Component {
         let access = this.state.access
         const newMedicineFeature = <div className='new-medicine-features'><Link to='/nowylek'>Nowy Lek</Link></div>
         const newAidKitFeature = <div className='new-aid-kit-features'><Link to='/nowaapteczka'>Nowa Apteczka</Link></div>
-        const outofdate = <div className='new-out-of-date'><Link to='/utylizacja'>Leki do utylizacji</Link></div>
+        const outofdate = <div className='new-out-of-date'><Link to='/terminwaznosci'>Leki do utylizacji</Link></div>
+        const deletemed = <div className='delete-med'><Link to='/usun'>Utylizuj/Pobierz lek</Link></div>
         const logoutFeature = <div className='logout'><a href='/' onClick={this.logoutHandler}>Wyloguj</a></div>
 
-        const loggedFeature = access === '226a318e0106d6a6cd1ea8fe016287ce' ? <div className='loggedFeatures'>{logoutFeature}{newMedicineFeature}{newAidKitFeature}{outofdate}</div>:null
+        const loggedFeature = access === '226a318e0106d6a6cd1ea8fe016287ce' ? <div className='loggedFeatures'>{logoutFeature}{newMedicineFeature}{newAidKitFeature}{outofdate}{deletemed}</div>:null
         const loginFeature = access !== '226a318e0106d6a6cd1ea8fe016287ce' ?  
         <div className='home-buttons'>
             <div className='registration'>

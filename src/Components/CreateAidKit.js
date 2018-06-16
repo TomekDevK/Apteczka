@@ -14,7 +14,7 @@ class CreateAidKit extends Component {
             kitResponse: '0'
         }
     }
-
+    // Tworzenie nowej apteczki
     newAidKitRequestHandle = () => {
         let userName = getCookie('userName');
         console.log(userName)

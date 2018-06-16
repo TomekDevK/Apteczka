@@ -12,7 +12,7 @@
         return $number;
     }
 
-    // Kingi baza
+    //Łączenie z bazą
     $conn = new mysqli ("localhost","id6205530_tomalhunter","Tomal112","id6205530_tomal_hunter");
 
         if ($conn->connect_error) {
