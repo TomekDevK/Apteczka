@@ -10,6 +10,8 @@ import InputMedicine from './InputMedicine';
 import CreateAidKit from './CreateAidKit';
 import OutOfDate from './OutOfDate'
 import Delete from './Delete'
+import Settings from './Settings'
+import CheckMedicine from './CheckMedicine'
 
 
 class Main extends Component {
@@ -27,6 +29,8 @@ class Main extends Component {
                     <Route exact path='/nowaapteczka' component={CreateAidKit}/>
                     <Route exact path='/terminwaznosci' component={OutOfDate} />
                     <Route exact path='/usun' component={Delete} />
+                    <Route exact path='/settings' component={Settings} />
+                    <Route exact path='/leki' component={CheckMedicine} />
                 </Switch>
             </div>
        )

@@ -17,6 +17,9 @@ class Header extends Component {
                 <div className='home-header'>
                     <Link to='/'>Strona główna</Link>
                 </div>
+                <div className='home-addmedicine'>
+                    <Link to='/settings'>Dodaj apteczkę do konta</Link>
+                </div>
             </div>
         )
     }

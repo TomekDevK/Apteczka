@@ -44,12 +44,13 @@
     $medicines = $conn->query($sql);
     $i=0;
     while($row = $medicines->fetch_assoc()){
-        $expire=$row['expdate'].'<br/>';
+        $expire=$row['expdate'];
         //Sprawdzanie ktore leki sa przeterminowane i zwracanie ich
         if($expire<=$today) {
             echo $expmedicines[$i] = $row['medicinename'].':'.$row['amount'].':'.$row['price'].':'.$row['expdate'].':'.$row['date'].':'.$row['id'].':'.$row['userName'].';';
             $i++;
         }
     }
+    $conn->close();
 
 ?>

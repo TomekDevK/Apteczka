@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 30vh;
+    height: 50vh;
     transform: translate3d(-50%, -50%, 0);
 
     a {
@@ -87,7 +87,8 @@
 
 .login,
 .inputmedicine-form,
-.deletemedicne-form{
+.deletemedicne-form,
+.checktakenlist-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,20 +136,25 @@ a{
 }
 
 .inputmedicine,
-.out-of-date-output {
+.out-of-date-output,
+.check-output {
     width: 100%;
     height: 100%;
     min-width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column
 }
 
-#medicines-output {
+#medicines-output,
+#medicines-check,
+#medicines-taken {
     display: flex;
     flex-direction: column;
     width: 700px;
-    height: 500px;
+    max-height: 50vh;
+    overflow: scroll
 }
 
 

@@ -82,8 +82,17 @@ class Header extends Component {
         const outofdate = <div className='new-out-of-date'><Link to='/terminwaznosci'>Leki do utylizacji</Link></div>
         const deletemed = <div className='delete-med'><Link to='/usun'>Utylizuj/Pobierz lek</Link></div>
         const logoutFeature = <div className='logout'><a href='/' onClick={this.logoutHandler}>Wyloguj</a></div>
+        const viewMedicines = <div className='view-medicines'><Link to='leki'>Spis Leków</Link></div>
 
-        const loggedFeature = access === '226a318e0106d6a6cd1ea8fe016287ce' ? <div className='loggedFeatures'>{logoutFeature}{newMedicineFeature}{newAidKitFeature}{outofdate}{deletemed}</div>:null
+        const loggedFeature = access === '226a318e0106d6a6cd1ea8fe016287ce' ? <div className='loggedFeatures'>
+        {logoutFeature}
+        {newMedicineFeature}
+        {newAidKitFeature}
+        {outofdate}
+        {deletemed}
+        {viewMedicines}
+        </div>
+        :null
         const loginFeature = access !== '226a318e0106d6a6cd1ea8fe016287ce' ?  
         <div className='home-buttons'>
             <div className='registration'>
@@ -92,8 +101,8 @@ class Header extends Component {
             <div className='login'>
                 <Link to='/login'>Logowanie</Link>
             </div>
-        </div>:
-        null
+        </div>
+        :null
 
         this.moveBackground()
         
