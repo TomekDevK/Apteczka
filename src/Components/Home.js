@@ -93,6 +93,7 @@ class Header extends Component {
         {viewMedicines}
         </div>
         :null
+        
         const loginFeature = access !== '226a318e0106d6a6cd1ea8fe016287ce' ?  
         <div className='home-buttons'>
             <div className='registration'>
