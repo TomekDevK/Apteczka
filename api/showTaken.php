@@ -38,7 +38,7 @@
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()){
         $expire=$row['delDate'];
-        //Sprawdzanie ktore leki sa przeterminowane i zwracanie ich
+        //Sprawdzanie ktore leki sa wyjete
         if(!empty($_POST['medicineTo']) && !empty($_POST['medicineFrom'])){
             if($expire<=$_POST['medicineTo'] && $expire >=$_POST['medicineFrom']) {
                 echo $expmedicines[$i] = $row['id'].':'.$row['idleku'].':'.$row['medicinename'].':'.$row['amount'].':'.$row['price'].':'.$row['act'].':'.$row['delUser'].':'.$row['delDate'].';';

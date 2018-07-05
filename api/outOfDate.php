@@ -39,7 +39,7 @@
     //dzisiejsza data zeby sprawdzic waznosc
     $today = date("Y-m-d");
     
-    //Pobieranie wszystkich leków z bazy
+    //Pobieranie wszystkich leków z bazy konkretnej tabeli/apteczki
     $sql="SELECT * FROM {$_POST['yourAidKit']}";
     $medicines = $conn->query($sql);
     $i=0;
